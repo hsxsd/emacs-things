@@ -10,7 +10,7 @@
 
 第一种方法没找到怎么解决，第二种方法可以把`c-u 1 c-v`绑定到新快捷键。网上找到的解决方案如下：
 
-```
+``` lisp
 ;;; scrollers - M-f, M-b
 ;;; 参考http://superuser.com/questions/527356/dont-change-the-cursor-position-when-scrolling-in-emacs
 (global-set-key "\M-f" "\C-u1\C-v")
@@ -25,7 +25,7 @@
 
 把这篇笔记同步到github的过程中，发现笔记内容是乱码（在Windows平台下使用emacs）。肯定是由于emacs默认编码不是utf-8。怎么查看emacs默认编码呢？使用`M-x describe-coding-system`可以看到默认编码果然不是utf-8，而是gbk，通过以下代码可以设置为utf-8（参考http://lunae.cc/windows-emacs-encoding）：
 
-```
+``` lisp
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)

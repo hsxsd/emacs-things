@@ -1,0 +1,12 @@
+* MFC CSocket编程
+
+1. 创建CListenSocket类，继承CSocket
+2. 创建CClientSocket类，继承CSocket
+3. 实现CListenSocket.OnAccept函数，在OnAccept函数中：
+   1) 创建CClientSocket
+   2) 以CClientSocket为参数，调用CListenSocket.Accept函数
+4. 实现CClientSocket.OnReceive函数
+   1) 创建CSocketFile
+   2) 创建CArchive
+5. 调用CListenSocket.Create绑定IP和端口
+6. 调用CListenSocket.Listen监听
